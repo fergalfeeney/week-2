@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'week2';
+  title = 'Incredible To Do App';
+  thingsToDo= [
+    'Learn javascript',
+    'Learn Angular',
+    'Learn Redux'
+  ];
+  thingsCompleted=[];
+  name = 'Fergal Feeney S00221135'
+
+  TaskSummary():string {
+    return`${this.thingsToDo.length} to do / ${this.thingsCompleted.length} completed`;
+
+  }
+constructor() {
+  setInterval(() => {
+    this.thingsToDo.push('make coffee');
+  },5000);
+  
+}
+
 }
